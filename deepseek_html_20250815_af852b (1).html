@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Handyman - Cluster LLANOS Blok FF Bogor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c6e49;
+            --secondary: #4c956c;
+            --accent: #fefee3;
+            --light: #d8f3dc;
+            --dark: #1b4332;
+            --warning: #dda15e;
+            --danger: #bc6c25;
+            --success: #588157;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .logo span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .login-btn {
+            background-color: var(--warning);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .login-btn:hover {
+            background-color: #c97e2e;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(44, 110, 73, 0.9), rgba(44, 110, 73, 0.8)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--warning);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #c97e2e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--warning);
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-body ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .card-body ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+        }
+        
+        .card-body ul li i {
+            color: var(--success);
+            margin-right: 10px;
+            min-width: 20px;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #777;
+            font-weight: 400;
+        }
+        
+        .calendar {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        
+        .calendar-day {
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            font-weight: 500;
+        }
+        
+        .calendar-date {
+            text-align: center;
+            padding: 15px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            min-height: 90px;
+        }
+        
+        .calendar-date:hover {
+            background-color: var(--light);
+        }
+        
+        .calendar-date.weekend {
+            background-color: #fff9e6;
+        }
+        
+        .calendar-date.unavailable {
+            background-color: #f8d7da;
+            color: #721c24;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .calendar-date.booked {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .calendar-date .date {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .booking-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--success);
+            margin: 2px;
+        }
+        
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 110, 73, 0.1);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+        }
+        
+        .alert-info {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            color: #004080;
+        }
+        
+        .alert-warning {
+            background-color: #fff8e6;
+            border-left: 4px solid #ffaa00;
+            color: #805500;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 25px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--warning);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .modal-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0 10px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .calendar-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .calendar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .calendar-date {
+                min-height: 70px;
+                padding: 10px 5px;
+                font-size: 0.9rem;
+            }
+            
+            .hero {
+                padding: 50px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div style="background-color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-tools" style="font-size: 24px; color: #2c6e49;"></i>
+                    </div>
+                    <div>
+                        <h1>Handyman Service <span>Cluster LLANOS Blok FF</span></h1>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">Beranda</a></li>
+                        <li><a href="#schedule">Jadwal</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#pricing">Tarif</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Layanan Handyman Profesional untuk Cluster LLANOS Blok FF</h2>
+            <p>Booking teknisi handyman untuk berbagai kebutuhan perbaikan dan pemeliharaan rumah Anda. Jadwalkan dengan mudah dan dapatkan layanan profesional dari Pak Rizal.</p>
+            <div>
+                <a href="#booking" class="btn">Booking Sekarang</a>
+                <a href="#schedule" class="btn btn-outline">Lihat Jadwal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jadwal Section -->
+    <section class="section" id="schedule">
+        <div class="container">
+            <div class="section-title">
+                <h2>Jadwal Mingguan Handyman</h2>
+            </div>
+            
+            <div class="alert alert-warning">
+                <strong>MOHON MELIHAT JADWAL UPDATE APABILA SUDAH DISETUJUI ADMIN, BARU BISA DILAKSANAKAN KEGIATAN BOOKING</strong>
+            </div>
+            
+            <div class="calendar">
+                <div class="calendar-header">
+                    <h3>Agustus 2023</h3>
+                    <div>
+                        <button class="btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn">Hari Ini</button>
+                        <button class="btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="calendar-grid">
+                    <div class="calendar-day">Senin</div>
+                    <div class="calendar-day">Selasa</div>
+                    <div class="calendar-day">Rabu</div>
+                    <div class="calendar-day">Kamis</div>
+                    <div class="calendar-day">Jumat</div>
+                    <div class="calendar-day weekend">Sabtu</div>
+                    <div class="calendar-day weekend">Minggu</div>
+                    
+                    <!-- Tanggal 1-7 -->
+                    <div class="calendar-date">
+                        <div class="date">1</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">2</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">3</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                            <span class="booking-dot"></span>
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">4</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">5</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date weekend">
+                        <div class="date">6</div>
+                    </div>
+                    <div class="calendar-date weekend unavailable">
+                        <div class="date">7</div>
+                        <div>LIBUR</div>
+                    </div>
+                    
+                    <!-- Tanggal 8-14 -->
+                    <div class="calendar-date">
+                        <div class="date">8</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">9</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">10</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">11</div>
+                    </div>
+                    <div class="calendar-date booked">
+                        <div class="date">12</div>
+                        <div>PENUH</div>
+                    </div>
+                    <div class="calendar-date weekend">
+                        <div class="date">13</div>
+                    </div>
+                    <div class="calendar-date weekend unavailable">
+                        <div class="date">14</div>
+                        <div>LIBUR</div>
+                    </div>
+                    
+                    <!-- Tanggal 15-21 -->
+                    <div class="calendar-date">
+                        <div class="date">15</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">16</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">17</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                            <span class="booking-dot"></span>
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">18</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">19</div>
+                    </div>
+                    <div class="calendar-date weekend">
+                        <div class="date">20</div>
+                    </div>
+                    <div class="calendar-date weekend unavailable">
+                        <div class="date">21</div>
+                        <div>LIBUR</div>
+                    </div>
+                    
+                    <!-- Tanggal 22-28 -->
+                    <div class="calendar-date">
+                        <div class="date">22</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">23</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">24</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">25</div>
+                    </div>
+                    <div class="calendar-date booked">
+                        <div class="date">26</div>
+                        <div>PENUH</div>
+                    </div>
+                    <div class="calendar-date weekend">
+                        <div class="date">27</div>
+                    </div>
+                    <div class="calendar-date weekend unavailable">
+                        <div class="date">28</div>
+                        <div>LIBUR</div>
+                    </div>
+                    
+                    <!-- Tanggal 29-31 -->
+                    <div class="calendar-date">
+                        <div class="date">29</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">30</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date">31</div>
+                        <div class="events">
+                            <span class="booking-dot"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                </div>
+            </div>
+            
+            <div class="notes">
+                <h4>Keterangan Jadwal:</h4>
+                <ul>
+                    <li><strong>Hari Kerja:</strong> Senin - Jumat (08:00 - 17:00)</li>
+                    <li><strong>Istirahat:</strong> 12:30 - 13:30</li>
+                    <li><strong>Jumat:</strong> Hanya available booking dari jam 13:30 siang</li>
+                    <li><strong>Sabtu/Minggu:</strong> Libur, kecuali ada booking khusus dengan tarif berbeda</li>
+                    <li><strong>Setiap pagi (08:00-09:00):</strong> Pengecekan rutin harian perumahan</li>
+                    <li><strong>Setiap Jumat pagi:</strong> Kegiatan teknis masjid</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="section" id="booking" style="background-color: #f0f7f4;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Form Booking Handyman</h2>
+            </div>
+            
+            <div class="form-container">
+                <div class="alert alert-info">
+                    <strong>Penting:</strong> Bookingan harus konfirmasi minimal H-2. Survey akan dilakukan minimal H-1.
+                </div>
+                
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" class="form-control" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Contoh: 08123456789" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="blok">Blok Rumah</label>
+                            <select id="blok" class="form-control" required>
+                                <option value="">Pilih Blok</option>
+                                <option value="FF1">FF1</option>
+                                <option value="FF2">FF2</option>
+                                <option value="FF3">FF3</option>
+                                <option value="FF4">FF4</option>
+                                <option value="FF5">FF5</option>
+                                <option value="FF6">FF6</option>
+                                <option value="FF7">FF7</option>
+                                <option value="FF8">FF8</option>
+                                <option value="FF9">FF9</option>
+                                <option value="FF10">FF10</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomor">Nomor Rumah</label>
+                            <input type="text" id="nomor" class="form-control" placeholder="Contoh: 11" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pekerjaan">Pekerjaan yang Dilakukan</label>
+                        <textarea id="pekerjaan" class="form-control" rows="4" placeholder="Jelaskan detail pekerjaan yang dibutuhkan" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal yang Diinginkan</label>
+                            <input type="date" id="tanggal" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="durasi">Durasi Pekerjaan</label>
+                            <select id="durasi" class="form-control" required>
+                                <option value="">Pilih Durasi</option>
+                                <option value="3.5">3.5 Jam (Rp 50.000 hari biasa)</option>
+                                <option value="7">7 Jam (Rp 100.000 hari biasa)</option>
+                                <option value="3.5-weekend">3.5 Jam Akhir Pekan (Rp 85.000)</option>
+                                <option value="7-weekend">7 Jam Akhir Pekan (Rp 170.000)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Butuh Survey?</label>
+                        <div>
+                            <input type="radio" id="survey-yes" name="survey" value="yes" required>
+                            <label for="survey-yes">Ya</label>
+                            <input type="radio" id="survey-no" name="survey" value="no" style="margin-left: 20px;">
+                            <label for="survey-no">Tidak</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Catatan Tambahan</label>
+                        <textarea id="notes" class="form-control" rows="3" placeholder="Tambahkan catatan jika diperlukan"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; padding: 15px; font-size: 1.1rem;">Ajukan Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tarif Layanan Handyman</h2>
+            </div>
+            
+            <div class="cards">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Hari Biasa (Senin-Jumat)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="price">Rp 50.000 <span>/ 3.5 jam</span></div>
+                        <div class="price">Rp 100.000 <span>/ 7 jam</span></div>
+                        
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Jam kerja: 08:00 - 17:00</li>
+                            <li><i class="fas fa-check-circle"></i> Istirahat: 12:30 - 13:30</li>
+                            <li><i class="fas fa-check-circle"></i> Jumat hanya tersedia mulai 13:30</li>
+                            <li><i class="fas fa-check-circle"></i> Minimal booking H-2</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Akhir Pekan (Sabtu/Minggu)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="price">Rp 85.000 <span>/ 3.5 jam</span></div>
+                        <div class="price">Rp 170.000 <span>/ 7 jam</span></div>
+                        
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Hanya tersedia jika handyman bersedia</li>
+                            <li><i class="fas fa-check-circle"></i> Jam kerja fleksibel berdasarkan kesepakatan</li>
+                            <li><i class="fas fa-check-circle"></i> Minimal booking H-3</li>
+                            <li><i class="fas fa-check-circle"></i> Konfirmasi ketersediaan melalui admin</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Informasi Pembayaran</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <strong>Penting:</strong> Tips pribadi boleh diberikan langsung ke teknisi. Pembayaran langsung ke teknisi untuk biaya jasa tidak diperbolehkan.
+                        </div>
+                        
+                        <p><strong>Transfer ke:</strong></p>
+                        <p>Bank Jago 107420610025</p>
+                        <p>a.n. Iksan Darmansyah</p>
+                        <p>Kirim bukti transfer ke WA Bendahara PWCL</p>
+                        
+                        <div class="alert alert-warning" style="margin-top: 20px;">
+                            <strong>APABILA SUDAH SELESAI MELAKUKAN KEGIATAN, MOHON JANGAN LUPA MELAKUKAN PEMBAYARAN TRANSFER DAN UPLOAD BUKTI TRANSFER DI TEMPAT YANG DISEDIAKAN</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="background-color: #f0f7f4;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kontak Kami</h2>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-user-hard-hat"></i>
+                    <h3>Handyman</h3>
+                    <p>Pak Rizal</p>
+                    <p>0895-3553-56663</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Admin</h3>
+                    <p>Pak Indra (0811-1534-575)</p>
+                    <p>Pak Azis (0815-1166-5900)</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Finance</h3>
+                    <p>Pak Iksan</p>
+                    <p>0857-2233-8853</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Layanan Handyman</h3>
+                    <p>Menyediakan layanan teknis untuk perbaikan dan pemeliharaan rumah di Cluster LLANOS Blok FF Bogor.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Jam Operasional</h3>
+                    <ul>
+                        <li>Senin-Jumat: 08:00 - 17:00</li>
+                        <li>Istirahat: 12:30 - 13:30</li>
+                        <li>Sabtu-Minggu: Libur (kecuali booking khusus)</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#schedule">Jadwal</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#pricing">Tarif</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Layanan Handyman Cluster LLANOS Blok FF Bogor. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login ke Sistem</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" placeholder="Masukkan username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="Masukkan password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Peran</label>
+                        <select id="role" class="form-control" required>
+                            <option value="">Pilih peran</option>
+                            <option value="admin">Admin</option>
+                            <option value="finance">Finance</option>
+                            <option value="guest">Guest</option>
+                            <option value="handyman">Handyman</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Login Modal Functionality
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeBtn = document.querySelector('.close');
+        
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.style.display = 'flex';
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            loginModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+        
+        // Form Submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Booking berhasil diajukan! Admin akan menghubungi Anda untuk konfirmasi.');
+            this.reset();
+        });
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            
+            // Simulate login based on role
+            switch(role) {
+                case 'admin':
+                    if (username === 'admin' && password === 'adminLLANOS1!') {
+                        alert('Login Admin berhasil!');
+                        loginModal.style.display = 'none';
+                    } else {
+                        alert('Username atau password salah!');
+                    }
+                    break;
+                case 'finance':
+                    if (username === 'finance' && password === 'financeLLANOS1!') {
+                        alert('Login Finance berhasil!');
+                        loginModal.style.display = 'none';
+                    } else {
+                        alert('Username atau password salah!');
+                    }
+                    break;
+                case 'guest':
+                    if (username === 'guest' && password === 'guest') {
+                        alert('Login Guest berhasil!');
+                        loginModal.style.display = 'none';
+                    } else {
+                        alert('Username atau password salah!');
+                    }
+                    break;
+                case 'handyman':
+                    if (username === 'Rizal' && password === 'handyman1!') {
+                        alert('Login Handyman berhasil!');
+                        loginModal.style.display = 'none';
+                    } else {
+                        alert('Username atau password salah!');
+                    }
+                    break;
+                default:
+                    alert('Silakan pilih peran!');
+            }
+        });
+        
+        // Set min date for booking (tomorrow)
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        const minDate = tomorrow.toISOString().split('T')[0];
+        document.getElementById('tanggal').min = minDate;
+    </script>
+</body>
+</html>
